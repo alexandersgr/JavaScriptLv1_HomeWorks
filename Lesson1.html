@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<title>ДЗ #1</title>
+    <meta charset="UTF-8">
+    <title>ДЗ #1</title>
 </head>
 
 <body>
@@ -13,32 +13,54 @@
     var siteName = "Мой сайт";
 
     // Переменную-массив для меню сайта;
-	var siteMainMenu = [];
+    var siteMainMenu = [];
 
     // Переменную для размещения количества статей на одной странице сайта;
-	var postsPerPage = 10;
+    var postsPerPage = 10;
 
     // Переменную для заголовков статей;
-	var postHeader;
+    var postHeader;
 
     // Переменную для обычных статей;
-	var regularPost;
+    var regularPost;
 
     // Переменную для статей особой важности;
-	var importantPost;
+    var importantPost;
 
     // Переменную для юмористических статей;
-	var humorPost;
+    var humorPost;
 
     // Переменную для статей из блока “А если о серьезном”.;
-	var aboutSeriousBlockPost;
+    var aboutSeriousBlockPost;
 
     // Логическую переменную, говорящей о том будет картинка у статьи или нет;
-	var isImageForPost = true;
+    var isImageForPost = true;
 
     // Переменную для цены любого товара.
-	var productPrice;
+    var productPrice;
 
+    /*
+     Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в
+     градусах по Фаренгейту. Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32, где Tf –
+     температура по Фаренгейту, Tc – температура по Цельсию
+     */
+
+    var Tc = 32;
+    var Tf;
+    Tf = (9 / 5) * Tc + 32;
+    alert(Tf);
+
+    /*
+     Объявить две переменные: admin и name. Записать в name строку "Василий"; Скопировать
+     значение из name в admin. Вывести admin (должно вывести «Василий»).
+     */
+    var name = "Василий";
+    var admin;
+    admin = name;
+    alert(admin);
+
+    //* Чему будет равно JS-выражение 1000 + "108";
+    // 1000108, т.к. произойдет конкатенация строк а не сложение чисел
 
 </script>
 
