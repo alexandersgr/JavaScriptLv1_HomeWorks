@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ #2</title>
+</head>
+
+<body>
+
+<script>
+//Найдите ошибки в коде и исправьте его.
+
+// 2sad = 'This is Sparta!!!'
+// переменная декларируется через var или let и не должна начинаться с цифры
+var tooSad = 'This is Sparta!!!';
+
+// result = "true"; //Значение есть результат или нет. Если есть true, если значения нет false
+// в кавычках - срока, а надо boolean - без кавычек
+result = true;
+
+// var %entage = 20;
+// недопустимый символ %
+var percentage = 20;
+
+// var header = "Заголовок новой статьи';
+// разные кавычки в начале и конце строки
+var header = "Заголовок новой статьи";
+
+// zip code = 983456
+// пробел в имени переменной, точка с запятой в конце
+zipCode = 983456;
+
+// Prompt('Введите хоть что-нибудь')
+// имена фунций чувствительны к регистру, возвращаемое значение нужно сохранить
+var answer = prompt('Введите хоть что-нибудь');
+
+// Alert 'Вы точно все ввели?'
+// регистр, аргументы функции должны быть в скобках ()
+alert ('Вы точно все ввели?');
+
+var var1 = 25;
+var var2 = 'Орехов';
+// alert (Вы нашли var1 var2)
+// строка должна быть в кавычках, конкатенация строк через +
+alert ("Вы нашли " + var1 + " " + var2);
+
+var var3 = '45';
+var var4 = 20;
+// console.log (var3+var4) // Этот результат проверить. Должно получиться 65.
+// нужно привести строку к числу, например через parseInt()
+console.log (parseInt(var3)+var4);
+
+
+// Определите типы следующих переменных:
+var art ="25 / 5";
+// string
+
+var same = null;
+// object
+
+var scoop;
+// undefined
+
+var flag = 0;
+// number
+
+var plat = true;
+// boolean
+
+var devid = 34 / 7;
+// number
+
+var person = {lastname: "Ivan"};
+// object
+
+var fruits = ['apple'];
+// object
+
+var iceCream = function() { alert('Я люблю мороженое'); };
+// function
+
+
+// Найдите длину следующих строк:
+var l1 = "JavaScript is a high-level, dynamic, untyped, and interpreted programming language".length;
+// 82
+
+var l2 = "Netscape Communications realized that the Web needed to become more dynamic".length;
+// 75
+
+var l3 = "JavaScript was realized in ten days".length;
+// 35
+
+// Выведите следующие строки в верхнем регистре. Результат присвойте переменной.
+var s1 = "console.log".toUpperCase();
+var s2 = "Hello World!".toUpperCase();
+var s3 = "I need more code on JavaScript".toUpperCase();
+
+// Переменные из предыдущего задания преобразуйте в нижний регистр.
+s1 = s1.toLowerCase();
+s2 = s2.toLowerCase();
+s3 = s3.toLowerCase();
+
+// Преобразуйте в верхний регистр, только первые буквы.
+function capitalize(str) {
+    var firstLetter = str.charAt(0);
+    return firstLetter.toUpperCase() + str.slice(1);
+}
+
+console.log(capitalize(s1));
+console.log(capitalize(s2));
+console.log(capitalize(s3));
+
+</script>
+
+</body>
+</html>
