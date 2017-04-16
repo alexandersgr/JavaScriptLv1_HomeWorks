@@ -227,7 +227,7 @@
      */
 
     function mathOperation(arg1, arg2, operation) {
-        result = 0;
+        var result = false;
 
         switch (operation) {
             case "summ":
@@ -245,6 +245,8 @@
         }
         return result;
     }
+
+    console.log(mathOperation(30,20,"subtr"));
 
     // 7.	* Сравнить null и 0. Попробуйте объяснить результат.
     // null используется чтобы указать на отсутсвие вообще какого-либо значения а 0 это уже конкретное значение
