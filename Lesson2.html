@@ -8,108 +8,263 @@
 <body>
 
 <script>
-//Найдите ошибки в коде и исправьте его.
 
-// 2sad = 'This is Sparta!!!'
-// переменная декларируется через var или let и не должна начинаться с цифры
-var tooSad = 'This is Sparta!!!';
+    "use strict";
 
-// result = "true"; //Значение есть результат или нет. Если есть true, если значения нет false
-// в кавычках - срока, а надо boolean - без кавычек
-result = true;
+    //Найдите ошибки в коде и исправьте его.
 
-// var %entage = 20;
-// недопустимый символ %
-var percentage = 20;
+    // 2sad = 'This is Sparta!!!'
+    // переменная декларируется через var или let и не должна начинаться с цифры
+    var tooSad = 'This is Sparta!!!';
 
-// var header = "Заголовок новой статьи';
-// разные кавычки в начале и конце строки
-var header = "Заголовок новой статьи";
+    // result = "true"; //Значение есть результат или нет. Если есть true, если значения нет false
+    // в кавычках - срока, а надо boolean - без кавычек
+    var result = true;
 
-// zip code = 983456
-// пробел в имени переменной, точка с запятой в конце
-zipCode = 983456;
+    // var %entage = 20;
+    // недопустимый символ %
+    var percentage = 20;
 
-// Prompt('Введите хоть что-нибудь')
-// имена фунций чувствительны к регистру, возвращаемое значение нужно сохранить
-var answer = prompt('Введите хоть что-нибудь');
+    // var header = "Заголовок новой статьи';
+    // разные кавычки в начале и конце строки
+    var header = "Заголовок новой статьи";
 
-// Alert 'Вы точно все ввели?'
-// регистр, аргументы функции должны быть в скобках ()
-alert ('Вы точно все ввели?');
+    // zip code = 983456
+    // пробел в имени переменной, точка с запятой в конце
+    var zipCode = 983456;
 
-var var1 = 25;
-var var2 = 'Орехов';
-// alert (Вы нашли var1 var2)
-// строка должна быть в кавычках, конкатенация строк через +
-alert ("Вы нашли " + var1 + " " + var2);
+    // Prompt('Введите хоть что-нибудь')
+    // имена фунций чувствительны к регистру, возвращаемое значение нужно сохранить
+    var answer = prompt('Введите хоть что-нибудь');
 
-var var3 = '45';
-var var4 = 20;
-// console.log (var3+var4) // Этот результат проверить. Должно получиться 65.
-// нужно привести строку к числу, например через parseInt()
-console.log (parseInt(var3)+var4);
+    // Alert 'Вы точно все ввели?'
+    // регистр, аргументы функции должны быть в скобках ()
+    alert('Вы точно все ввели?');
 
+    var var1 = 25;
+    var var2 = 'Орехов';
+    // alert (Вы нашли var1 var2)
+    // строка должна быть в кавычках, конкатенация строк через +
+    alert("Вы нашли " + var1 + " " + var2);
 
-// Определите типы следующих переменных:
-var art ="25 / 5";
-// string
-
-var same = null;
-// object
-
-var scoop;
-// undefined
-
-var flag = 0;
-// number
-
-var plat = true;
-// boolean
-
-var devid = 34 / 7;
-// number
-
-var person = {lastname: "Ivan"};
-// object
-
-var fruits = ['apple'];
-// object
-
-var iceCream = function() { alert('Я люблю мороженое'); };
-// function
+    var var3 = '45';
+    var var4 = 20;
+    // console.log (var3+var4) // Этот результат проверить. Должно получиться 65.
+    // нужно привести строку к числу, например через parseInt()
+    console.log(parseInt(var3) + var4);
 
 
-// Найдите длину следующих строк:
-var l1 = "JavaScript is a high-level, dynamic, untyped, and interpreted programming language".length;
-// 82
+    // Определите типы следующих переменных:
+    var art = "25 / 5";
+    // string
 
-var l2 = "Netscape Communications realized that the Web needed to become more dynamic".length;
-// 75
+    var same = null;
+    // object
 
-var l3 = "JavaScript was realized in ten days".length;
-// 35
+    var scoop;
+    // undefined
 
-// Выведите следующие строки в верхнем регистре. Результат присвойте переменной.
-var s1 = "console.log".toUpperCase();
-var s2 = "Hello World!".toUpperCase();
-var s3 = "I need more code on JavaScript".toUpperCase();
+    var flag = 0;
+    // number
 
-// Переменные из предыдущего задания преобразуйте в нижний регистр.
-s1 = s1.toLowerCase();
-s2 = s2.toLowerCase();
-s3 = s3.toLowerCase();
+    var plat = true;
+    // boolean
 
-// Преобразуйте в верхний регистр, только первые буквы.
-function capitalize(str) {
-    var firstLetter = str.charAt(0);
-    return firstLetter.toUpperCase() + str.slice(1);
-}
+    var devid = 34 / 7;
+    // number
 
-console.log(capitalize(s1));
-console.log(capitalize(s2));
-console.log(capitalize(s3));
+    var person = {lastname: "Ivan"};
+    // object
 
+    var fruits = ['apple'];
+    // object
+
+    var iceCream = function () {
+        alert('Я люблю мороженое');
+    };
+    // function
+
+
+    // Найдите длину следующих строк:
+    var l1 = "JavaScript is a high-level, dynamic, untyped, and interpreted programming language".length;
+    // 82
+
+    var l2 = "Netscape Communications realized that the Web needed to become more dynamic".length;
+    // 75
+
+    var l3 = "JavaScript was realized in ten days".length;
+    // 35
+
+    // Выведите следующие строки в верхнем регистре. Результат присвойте переменной.
+    var s1 = "console.log".toUpperCase();
+    var s2 = "Hello World!".toUpperCase();
+    var s3 = "I need more code on JavaScript".toUpperCase();
+
+    // Переменные из предыдущего задания преобразуйте в нижний регистр.
+    s1 = s1.toLowerCase();
+    s2 = s2.toLowerCase();
+    s3 = s3.toLowerCase();
+
+    // Преобразуйте в верхний регистр, только первые буквы.
+    function capitalize(str) {
+        var firstLetter = str.charAt(0);
+        return firstLetter.toUpperCase() + str.slice(1);
+    }
+
+    console.log(capitalize(s1));
+    console.log(capitalize(s2));
+    console.log(capitalize(s3));
+
+
+    //1.	Дан код:
+    //Почему код даёт именно такие результаты?
+    var a = 1, b = 1, c, d;
+    c = ++a;
+    alert(c);           // 2
+    d = b++;
+    alert(d);          // 1
+    c = (2 + ++a);
+    alert(c);  // 5
+    d = (2 + b++);
+    alert(d); // 4
+    alert(a);                        // 3
+    alert(b);                        // 3
+
+    /* тут приколы с преинкрементом (++a) который сначала увеличивает значение переменной а потом возвращает результат
+     * и постинкрементом (a++) который сначала возвращает значение переменной а потом увеличивает её значение
+     * комментировать каждую строку - лень :)
+     */
+
+    //2.	Чему будет равен x в примере ниже?
+    a = 2;
+    var x = 1 + (a *= 2);
+    // x = 5, a = 4
+
+    /*3.	Объявить две целочисленные переменные a и b и задать им произвольные начальные значения.
+     Затем написать скрипт, который работает по следующему принципу:
+     o	если a и b положительные, вывести их разность;
+     o	если а и b отрицательные, вывести их произведение;
+     o	если а и b разных знаков, вывести их сумму;
+     ноль можно считать положительным числом.
+     */
+
+    a = -5;
+    b = -8;
+
+    if (a >= 0 && b >= 0) {
+        console.log("Разность = " + (a - b));
+    }
+
+    if (a < 0 && b < 0) {
+        console.log("Произведение = " + (a * b));
+    }
+
+    if ((a >= 0 && b < 0) || (a < 0 && b >= 0)) {
+        console.log("Сумма = " + (a + b));
+    }
+
+    // 4.	Присвоить переменной а значение в промежутке [0..15].
+    // С помощью оператора switch организовать вывод чисел от a до 15.
+
+    a = 8;
+    switch (a) {
+        case 1:
+            console.log(a++);
+        case 2:
+            console.log(a++);
+        case 3:
+            console.log(a++);
+        case 4:
+            console.log(a++);
+        case 5:
+            console.log(a++);
+        case 6:
+            console.log(a++);
+        case 7:
+            console.log(a++);
+        case 8:
+            console.log(a++);
+        case 9:
+            console.log(a++);
+        case 10:
+            console.log(a++);
+        case 11:
+            console.log(a++);
+        case 12:
+            console.log(a++);
+        case 13:
+            console.log(a++);
+        case 14:
+            console.log(a++);
+        case 15:
+            console.log(a++);
+    }
+
+    // 5.	Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+    // Обязательно использовать оператор return.
+
+    function summ(a, b) {
+        return a + b;
+    }
+
+    function divide(a, b) {
+        return a / b;
+    }
+
+    function subtr(a, b) {
+        return a - b;
+    }
+
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    /* 6.	Реализовать функцию с тремя параметрами:
+     * function mathOperation(arg1, arg2, operation),
+     * где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+     * В зависимости от переданного значения операции выполнить одну из арифметических операций
+     * (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).
+     */
+
+    function mathOperation(arg1, arg2, operation) {
+        result = 0;
+
+        switch (operation) {
+            case "summ":
+                result = summ(arg1, arg2);
+                break;
+            case "divide":
+                result = divide(arg1, arg2);
+                break;
+            case "subtr":
+                result = subtr(arg1, arg2);
+                break;
+            case "multiply":
+                result = multiply(arg1, arg2);
+                break;
+        }
+        return result;
+    }
+
+    // 7.	* Сравнить null и 0. Попробуйте объяснить результат.
+    // null используется чтобы указать на отсутсвие вообще какого-либо значения а 0 это уже конкретное значение
+
+
+    // 8.	*С помощью рекурсии организовать функцию возведения числа в степень.
+    // Формат: function power(val, pow), где val – заданное число, pow – степень.
+
+    function power(val, pow)
+    {
+        if (pow > 0) {
+            return val * power(val, pow - 1);
+        } else if (pow < 0) {
+            return val * power(val, pow + 1);
+        } else
+            return 1;
+    }
+
+    console.log("2^10 = " + power(2, 10));
+    
 </script>
 
 </body>
