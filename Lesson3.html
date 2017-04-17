@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <title>ДЗ #3</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .control-label {
+            padding-right: 0;
+        }
+
+        .form-group div {
+            padding-left: 7px;
+        }
+    </style>
 </head>
 <body>
 <div class="container" style="width: 40%">
-    <h2>Калькулятор</h2>
+    <h2 class="text-center">Калькулятор</h2>
     <form class="form-horizontal" action="" id="form1">
 
         <div class="form-group">
@@ -33,7 +42,7 @@
     </form>
 
     <div class="form-group">
-        <div class="col-sm-offset-1 col-sm-11">
+        <div class="col-sm-offset-1 col-sm-11 text-right">
             <button class="btn btn-default" onclick="summ();">+</button>
             <button class="btn btn-default" onclick="subtr();">-</button>
             <button class="btn btn-default" onclick="multiply();">*</button>
