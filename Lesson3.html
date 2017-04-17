@@ -33,11 +33,17 @@
     </form>
 
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-9">
+        <div class="col-sm-offset-1 col-sm-11">
             <button class="btn btn-default" onclick="summ();">+</button>
             <button class="btn btn-default" onclick="subtr();">-</button>
             <button class="btn btn-default" onclick="multiply();">*</button>
             <button class="btn btn-default" onclick="divide();">/</button>
+            <button class="btn btn-default" onclick="power();">**</button>
+            <button class="btn btn-default" onclick="percent();">%</button>
+            <button class="btn btn-default" onclick="and();">&</button>
+            <button class="btn btn-default" onclick="or();">|</button>
+            <button class="btn btn-default" onclick="xor();">^</button>
+            <button class="btn btn-default" onclick="not_a();">~</button>
 
         </div>
     </div>
@@ -62,6 +68,24 @@
         } else {
             resultField.value = "Деление на ноль!";
         }
+    }
+    function power() {
+        resultField.value = parseFloat(op1Field.value) ** parseFloat(op2Field.value);
+    }
+    function percent() {
+        resultField.value = parseFloat(op1Field.value) % parseFloat(op2Field.value);
+    }
+    function and() {
+        resultField.value = parseFloat(op1Field.value) & parseFloat(op2Field.value);
+    }
+    function or() {
+        resultField.value = parseFloat(op1Field.value) | parseFloat(op2Field.value);
+    }
+    function xor() {
+        resultField.value = parseFloat(op1Field.value) ^ parseFloat(op2Field.value);
+    }
+    function not_a() {
+        resultField.value = ~ parseInt(op1Field.value);
     }
 </script>
 </body>
