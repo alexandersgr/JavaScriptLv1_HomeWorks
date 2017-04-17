@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ #3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" style="width: 40%">
+    <h2>Калькулятор</h2>
+    <form class="form-horizontal" action="" id="form1">
+
+        <div class="form-group">
+            <label class="control-label col-sm-3" for="operand1">Число:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="operand1" placeholder="Введите первое число">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3" for="operand2">Число:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="operand2" placeholder="Введите второе число">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3" for="result">Результат:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="result" placeholder="Здесь будет результат" readonly>
+            </div>
+        </div>
+    </form>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-9">
+            <button class="btn btn-default" onclick="summ();">+</button>
+            <button class="btn btn-default" onclick="subtr();">-</button>
+            <button class="btn btn-default" onclick="multiply();">*</button>
+            <button class="btn btn-default" onclick="divide();">/</button>
+
+        </div>
+    </div>
+</div>
+<script>
+    var resultField = document.getElementById("result");
+    var op1Field = document.getElementById("operand1");
+    var op2Field = document.getElementById("operand2");
+
+    function summ() {
+        resultField.value = parseFloat(op1Field.value) + parseFloat(op2Field.value);
+    }
+    function subtr() {
+        resultField.value = parseFloat(op1Field.value) - parseFloat(op2Field.value);
+    }
+    function multiply() {
+        resultField.value = parseFloat(op1Field.value) * parseFloat(op2Field.value);
+    }
+    function divide() {
+        if (parseFloat(op2Field.value) !== 0) {
+            resultField.value = parseFloat(op1Field.value) / parseFloat(op2Field.value);
+        } else {
+            resultField.value = "Деление на ноль!";
+        }
+    }
+</script>
+</body>
+</html>
