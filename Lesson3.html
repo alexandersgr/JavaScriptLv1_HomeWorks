@@ -17,7 +17,7 @@
 <body>
 <div class="container" style="width: 40%">
     <h2 class="text-center">Калькулятор</h2>
-    <form class="form-horizontal" action="" id="form1">
+    <div class="form-horizontal" id="form1">
 
         <div class="form-group">
             <label class="control-label col-sm-3" for="operand1">Число:</label>
@@ -39,25 +39,45 @@
                 <input type="text" class="form-control" id="result" placeholder="Здесь будет результат" readonly>
             </div>
         </div>
-    </form>
 
-    <div class="form-group">
-        <div class="col-sm-offset-1 col-sm-11 text-right">
-            <button class="btn btn-default" onclick="summ();">+</button>
-            <button class="btn btn-default" onclick="subtr();">-</button>
-            <button class="btn btn-default" onclick="multiply();">*</button>
-            <button class="btn btn-default" onclick="divide();">/</button>
-            <button class="btn btn-default" onclick="power();">**</button>
-            <button class="btn btn-default" onclick="percent();">%</button>
-            <button class="btn btn-default" onclick="and();">&</button>
-            <button class="btn btn-default" onclick="or();">|</button>
-            <button class="btn btn-default" onclick="xor();">^</button>
-            <button class="btn btn-default" onclick="not_a();">~</button>
 
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-11 text-right">
+                <button class="btn btn-default" onclick="summ();">+</button>
+                <button class="btn btn-default" onclick="subtr();">-</button>
+                <button class="btn btn-default" onclick="multiply();">*</button>
+                <button class="btn btn-default" onclick="divide();">/</button>
+                <button class="btn btn-default" onclick="power();">**</button>
+                <button class="btn btn-default" onclick="percent();">%</button>
+                <button class="btn btn-default" onclick="and();">&</button>
+                <button class="btn btn-default" onclick="or();">|</button>
+                <button class="btn btn-default" onclick="xor();">^</button>
+                <button class="btn btn-default" onclick="not_a();">~</button>
+
+            </div>
+        </div>
+
+        <h2 class="text-center">Угадай число</h2>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <textarea class="form-control" name="gamelog" id="gamelog" rows="7" readonly></textarea>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <div class="col-sm-offset-1 col-sm-9">
+                <input type="text" class="form-control" id="gamenumber" placeholder="Введите второе число">
+            </div>
+            <div class="col-sm-1">
+                <button onclick="gameStep()" class="btn btn-default">?</button>
+            </div>
         </div>
     </div>
 </div>
 <script>
+    /*
+     *  Код калькулятора
+     */
     var resultField = document.getElementById("result");
     var op1Field = document.getElementById("operand1");
     var op2Field = document.getElementById("operand2");
@@ -94,8 +114,42 @@
         resultField.value = parseFloat(op1Field.value) ^ parseFloat(op2Field.value);
     }
     function not_a() {
-        resultField.value = ~ parseInt(op1Field.value);
+        resultField.value = ~parseInt(op1Field.value);
     }
+
+    /*
+     *  Код игры
+     */
+
+    var gamelog = document.getElementById("gamelog");
+    var gamenumberField = document.getElementById("gamenumber");
+
+    var maxNumber = 100;
+    var rndNumber = 0;
+
+    function newGame() {
+        rndNumber = Math.floor(Math.random() * maxNumber);
+        gamelog.value += "Загадано число от 0 до " + maxNumber + "\n";
+        gamelog.scrollTop = gamelog.scrollHeight;
+        console.log(rndNumber);
+    }
+
+    newGame();
+
+    function gameStep() {
+        var userNumber = parseInt(gamenumberField.value);
+        if (userNumber > rndNumber) {
+            gamelog.value += userNumber + "? Нет, Ваше число больше\n";
+        } else if (userNumber < rndNumber) {
+            gamelog.value += userNumber + "? Нет, Ваше число меньше\n";
+        } else if (userNumber == rndNumber) {
+            gamelog.value += "Правильно! Было загаданно " + userNumber + "\n";
+            newGame();
+        }
+        gamelog.scrollTop = gamelog.scrollHeight;
+    }
+
+
 </script>
 </body>
 </html>
