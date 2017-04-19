@@ -74,6 +74,24 @@
                 <button onclick="gameStep()" class="btn btn-default">?</button>
             </div>
         </div>
+
+        <h2 class="text-center">Генератор паролей</h2>
+        <div class="form-group">
+            <label class="control-label col-sm-3" for="newpassword">Пароль:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="newpassword">
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <label class="control-label col-sm-3" for="symbolsamount">Символов:</label>
+            <div class="col-sm-offset-1 col-sm-4">
+                <input type="text" class="form-control" id="symbolsamount" value="10">
+            </div>
+            <div class="col-sm-4">
+                <button onclick="generatePassword()" class="btn btn-default">Сгенерировать</button>
+            </div>
+        </div>
     </div>
 </div>
 <script>
@@ -157,6 +175,25 @@
         gamelog.scrollTop = gamelog.scrollHeight;
     }
 
+    /*
+     *  Генератор паролей
+     */
+
+    var newpassword = document.getElementById("newpassword");
+    var symbolsamount = document.getElementById("symbolsamount");
+
+    function generatePassword() {
+        var symbolsAmount = parseInt(symbolsamount.value);
+        var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+        var lng = charset.length;
+        var result = "";
+
+        for (var i = 0; i < symbolsAmount; i++) {
+            result += charset.charAt(Math.floor(Math.random() * lng));
+        }
+
+        newpassword.value = result;
+    }
 
 </script>
 </body>
