@@ -53,6 +53,8 @@
                 <button class="btn btn-default" onclick="or();">|</button>
                 <button class="btn btn-default" onclick="xor();">^</button>
                 <button class="btn btn-default" onclick="not_a();">~</button>
+                <button class="btn btn-default" onclick="shiftLeft();"><<</button>
+                <button class="btn btn-default" onclick="shiftRight();">>></button>
 
             </div>
         </div>
@@ -115,6 +117,12 @@
     }
     function not_a() {
         resultField.value = ~parseInt(op1Field.value);
+    }
+    function shiftLeft() {
+        resultField.value = parseFloat(op1Field.value) << parseFloat(op2Field.value);
+    }
+    function shiftRight() {
+        resultField.value = parseFloat(op1Field.value) >> parseFloat(op2Field.value);
     }
 
     /*
