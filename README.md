@@ -10,3 +10,5 @@
 
 * [ДЗ к уроку 4](https://alexandersgr.github.io/JavaScriptLv1_HomeWorks/Lesson4.html)
 >  Простые числа, числа от 0 до 10, числа от 0 до 9 с пустым телом цикла, пирамида
+
+* [ДЗ к уроку 5](https://alexandersgr.github.io/JavaScriptLv1_HomeWorks/Lesson5.html)
