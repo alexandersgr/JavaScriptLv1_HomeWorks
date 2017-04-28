@@ -12,3 +12,6 @@
 >  Простые числа, числа от 0 до 10, числа от 0 до 9 с пустым телом цикла, пирамида
 
 * [ДЗ к уроку 5](https://alexandersgr.github.io/JavaScriptLv1_HomeWorks/Lesson5.html)
+
+* [ДЗ к уроку 6](https://alexandersgr.github.io/JavaScriptLv1_HomeWorks/Lesson6.html)
+> Рекурсивные функции: сумма цифр числа, вывод всех нечетных цифр из числа, вывод каждого второго числа
