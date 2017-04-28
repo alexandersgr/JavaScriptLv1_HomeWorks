@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ #6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        label {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container" style="width: 40%">
+    <h2>ДЗ #6 - Рекурсия</h2>
+
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label>1. Сумма цифр числа:</label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Число" id="number1">
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-default" onclick="exercise1()" value="">Подсчитать</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Результат" id="result1" readonly>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label>2. Все нечетные цифры из числа:</label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Результат" id="result2" readonly>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-default" onclick="document.getElementById('result2').value=''; exercise2();">
+                    Подсчитать
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label>3. Каждое второе число:</label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Результат" id="result3" readonly>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-default" onclick="document.getElementById('result3').value=''; exercise3();">
+                    Подсчитать
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    "use strict";
+    /*
+     *  1. Дано натуральное число N. Вычислите сумму его цифр.
+     *  При решении этой задачи нельзя использовать строки, списки, массивы (ну и циклы, разумеется).
+     */
+
+    var sum = 0;
+
+    function numberSum(number) {
+        if (number / 10 > 0) {
+            sum += number % 10;
+            numberSum(parseInt(number / 10));
+        }
+    }
+
+    function exercise1() {
+        var num1 = document.getElementById("number1");
+        var res1 = document.getElementById("result1");
+        sum = 0;
+        numberSum(num1.value);
+        res1.value = sum;
+    }
+
+
+    /*
+     *  2. Дана последовательность натуральных чисел (одно число в строке), завершающаяся числом 0.
+     *  Выведите все нечетные числа из этой последовательности, сохраняя их порядок.
+     *  В этой задаче нельзя использовать глобальные переменные и передавать какие-либо параметры в рекурсивную функцию.
+     *  Функция получает данные, считывая их с клавиатуры. Функция не возвращает значение,
+     *  а сразу же выводит результат на экран. Основная программа должна состоять только из вызова этой функции.
+     */
+
+    function exercise2() {
+        var num = prompt("Следующее число или 0 для завершения", 0);
+        if (num != 0) {
+            if (num % 2 == 1) {
+                //console.log(num);
+                var res2 = document.getElementById("result2");
+                res2.value += num + " ";
+                exercise2();
+            } else {
+                exercise2();
+            }
+        }
+    }
+
+
+    /*
+     *  3. Дана последовательность натуральных чисел (одно число в строке), завершающаяся числом 0.
+     *  Выведите первое, третье, пятое и т.д. из введенных чисел. Завершающий ноль выводить не надо.
+     *  В этой задаче нельзя использовать глобальные переменные и передавать какие-либо параметры в
+     *  рекурсивную функцию. Функция получает данные, считывая их с клавиатуры. Функция не возвращает значение,
+     *  а сразу же выводит результат на экран. Основная программа должна состоять только из вызова этой функции.
+     */
+
+    function exercise3() {
+        var num = prompt("Следующее число или 0 для завершения", 0);
+        if (num != 0) {
+            var num2 = prompt("Следующее число или 0 для завершения", 0);
+            if (num2 != 0) {
+                var res3 = document.getElementById("result3");
+                res3.value += num2 + " ";
+                exercise3();
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
