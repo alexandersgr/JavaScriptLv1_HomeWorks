@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ #7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        label {
+            margin-top: 30px;
+        }
+
+        #chessboard {
+            display: flex;
+            justify-content: center;
+        }
+
+        .chess-board {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .topheader {
+            text-align: center;
+            height: 25px;
+            border-bottom: 1px solid black;
+        }
+
+        .leftheader {
+            width: 25px;
+            text-align: center;
+            border-right: 1px solid black;
+        }
+
+        .bottomheader {
+            text-align: center;
+            height: 25px;
+            border-top: 1px solid black;
+        }
+
+        .rightheader {
+            width: 25px;
+            text-align: center;
+            border-left: 1px solid black;
+        }
+
+        .black-square {
+            background-color: #aaa;
+            width: 60px;
+            height: 60px;
+        }
+
+        .square {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container" style="width: 40%">
+    <h2>ДЗ #7 - Шахматы</h2>
+</div>
+
+<div id="chessboard" style="width: 60%; margin: 0 auto;">
+</div>
+
+<script>
+    "use strict";
+
+    /*
+     *  1. Создать функцию, генерирующую шахматную доску. При этом можно использовать любые
+     *  html-теги по своему желанию. Доска должна быть разлинована соответствующим образом, т.е.
+     *  чередовать черные и белые ячейки. Строки должны нумероваться числами от 1 до 8, столбцы
+     *  – латинскими буквами A, B, C, D, E, F, G, H.
+     *  2. Заполнить созданную таблицу буквами, отвечающими за шахматную фигуру, например К-
+     *  король, Ф – ферзь и тп., причем все фигуры должны стоять на своих местах и быть
+     *  соответственно черными и белыми.
+     *  3. * Заменить буквы, обозначающие фигуры картинками.
+     */
+
+    function generateChessBoard(containerForChessBoardId) {
+        var color = true;  // цвет ячейки: true - белый, false - черный
+        var numbers = ["8", "7", "6", "5", "4", "3", "2", "1"];
+        var letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+        var whitePawns = ["&#9817;", "&#9817;", "&#9817;", "&#9817;", "&#9817;", "&#9817;", "&#9817;", "&#9817;"];
+        var whitePieces = ["&#9814;", "&#9816;", "&#9815;", "&#9812;", "&#9813;", "&#9815;", "&#9816;", "&#9814;"];
+
+        var blackPawns = ["&#9823;", "&#9823;", "&#9823;", "&#9823;", "&#9823;", "&#9823;", "&#9823;", "&#9823;"];
+        var blackPieces = ["&#9820;", "&#9822;", "&#9821;", "&#9818;", "&#9819;", "&#9821;", "&#9822;", "&#9820;"];
+
+        var boardContainer = document.getElementById(containerForChessBoardId);
+        var table = document.createElement('table');
+        table.className = "chess-board";
+
+
+        for (var i = 0; i <= 9; i++) {
+            var tr = document.createElement('tr');
+
+            color = !color;
+            for (var j = 0; j <= 9; j++) {
+                var td = document.createElement('td');
+                if (i == 0 || j == 0 || i == 9 || j == 9) {
+                    if ((i == 0 && j == 0) || (i == 9 && j == 9)) {
+                        tr.appendChild(td);
+                        continue;
+                    }
+                    if (i == 0 && j != 9) {
+                        td.innerText = letters[j - 1];
+                        td.className = "topheader";
+                    }
+                    if (j == 0 && i != 9) {
+                        td.innerText = numbers[i - 1];
+                        td.className = "leftheader";
+                    }
+                    if (i == 9 && j != 0) {
+                        td.innerText = letters[j - 1];
+                        td.className = "bottomheader";
+                    }
+                    if (j == 9 && i != 0) {
+                        td.innerText = numbers[i - 1];
+                        td.className = "rightheader";
+                    }
+                } else {
+                    if (!color) {
+                        td.className = "square black-square";
+                    } else {
+                        td.className = "square";
+                    }
+
+                    if (i == 1) {
+                        td.innerHTML = blackPieces[j - 1];
+                    }
+                    if (i == 2) {
+                        td.innerHTML = blackPawns[j - 1];
+                    }
+                    if (i == 7) {
+                        td.innerHTML = whitePawns[j - 1];
+                    }
+                    if (i == 8) {
+                        td.innerHTML = whitePieces[j - 1];
+                    }
+                    color = !color;
+                }
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        boardContainer.appendChild(table);
+    }
+
+    generateChessBoard("chessboard");
+
+</script>
+</body>
+</html>
