@@ -15,3 +15,6 @@
 
 * [ДЗ к уроку 6](https://alexandersgr.github.io/JavaScriptLv1_HomeWorks/Lesson6.html)
 > Рекурсивные функции: сумма цифр числа, вывод всех нечетных цифр из числа, вывод каждого второго числа
+
+* [ДЗ к уроку 7](https://alexandersgr.github.io/JavaScriptLv1_HomeWorks/Lesson7.html)
+> Шахматная доска с фигурами
