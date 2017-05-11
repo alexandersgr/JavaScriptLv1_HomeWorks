@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <title>ДЗ #7</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
-        label {
-            margin-top: 30px;
+        body {
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 14px;
         }
-
+        h2{
+            font-family: inherit;
+            font-weight: 500;
+            font-size: 30px;
+            margin: 12px 0;
+        }
         #chessboard {
             display: flex;
             justify-content: center;
@@ -17,37 +22,39 @@
 
         .chess-board {
             border: 1px solid black;
+            border-spacing: 0;
+            border-collapse: collapse;
             text-align: center;
         }
 
         .topheader {
-            text-align: center;
+            width: 60px;
             height: 25px;
+            padding: 0;
             border-bottom: 1px solid black;
         }
 
         .leftheader {
+            height: 60px;
             width: 25px;
-            text-align: center;
+            padding: 0;
             border-right: 1px solid black;
         }
 
         .bottomheader {
-            text-align: center;
             height: 25px;
+            padding: 0;
             border-top: 1px solid black;
         }
 
         .rightheader {
             width: 25px;
-            text-align: center;
+            padding: 0;
             border-left: 1px solid black;
         }
 
         .black-square {
             background-color: #aaa;
-            width: 60px;
-            height: 60px;
         }
 
         .square {
@@ -58,7 +65,7 @@
 <body>
 
 
-<div class="container" style="width: 40%">
+<div style="width: 40%; margin: 0 auto;">
     <h2>ДЗ #7 - Шахматы</h2>
 </div>
 
@@ -84,16 +91,15 @@
         var numbers = ["8", "7", "6", "5", "4", "3", "2", "1"];
         var letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
-        var whitePawns = ["&#9817;", "&#9817;", "&#9817;", "&#9817;", "&#9817;", "&#9817;", "&#9817;", "&#9817;"];
+        var whitePawn = "&#9817;";
         var whitePieces = ["&#9814;", "&#9816;", "&#9815;", "&#9813;", "&#9812;", "&#9815;", "&#9816;", "&#9814;"];
 
-        var blackPawns = ["&#9823;", "&#9823;", "&#9823;", "&#9823;", "&#9823;", "&#9823;", "&#9823;", "&#9823;"];
+        var blackPawn = "&#9823;";
         var blackPieces = ["&#9820;", "&#9822;", "&#9821;", "&#9819;", "&#9818;", "&#9821;", "&#9822;", "&#9820;"];
 
         var boardContainer = document.getElementById(containerForChessBoardId);
         var table = document.createElement('table');
         table.className = "chess-board";
-
 
         for (var i = 0; i <= 9; i++) {
             var tr = document.createElement('tr');
@@ -133,10 +139,10 @@
                         td.innerHTML = blackPieces[j - 1];
                     }
                     if (i == 2) {
-                        td.innerHTML = blackPawns[j - 1];
+                        td.innerHTML = blackPawn;
                     }
                     if (i == 7) {
-                        td.innerHTML = whitePawns[j - 1];
+                        td.innerHTML = whitePawn;
                     }
                     if (i == 8) {
                         td.innerHTML = whitePieces[j - 1];
