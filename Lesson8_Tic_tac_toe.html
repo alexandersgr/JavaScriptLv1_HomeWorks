@@ -41,6 +41,7 @@
     var currentPlayer = true; // true - x, false - o
     var boardArray = [];
     var gameIsOver = false;
+    var usedCells = 0;
     var conditionDiv = document.getElementById("condition");
 
     function currentSymbol() {
@@ -79,6 +80,19 @@
 
         threeFieldsCheck(boardArray[1], boardArray[5], boardArray[9]);
         threeFieldsCheck(boardArray[3], boardArray[5], boardArray[7]);
+
+        usedCells = 0;
+
+        for (var i = 1; i <= 9; i++) {
+            if (boardArray[i].innerHTML != "") {
+                usedCells++;
+            }
+        }
+        
+        if (usedCells == 9 && gameIsOver == false) {
+            gameIsOver = true;
+            conditionDiv.innerHTML = 'Ничья  <button class="btn btn-default" onclick="newGame()">Снова?</button>';
+        }
     }
 
     function newGame() {
