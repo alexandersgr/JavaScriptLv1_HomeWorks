@@ -18,3 +18,6 @@
 
 * [ДЗ к уроку 7](https://alexandersgr.github.io/JavaScriptLv1_HomeWorks/Lesson7.html)
 > Шахматная доска с фигурами
+
+* [ДЗ к уроку 8](https://alexandersgr.github.io/JavaScriptLv1_HomeWorks/Lesson8_Tic_tac_toe.html)
+> Крестики - нолики
