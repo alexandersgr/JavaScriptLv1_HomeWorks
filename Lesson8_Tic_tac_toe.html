@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ #8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .tic-tac-board {
+            border: 1px solid black;
+            border-spacing: 0;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .cell {
+            border: 1px solid black;
+            height: 90px;
+            width: 90px;
+        }
+
+        .highlight-win-combination {
+            background-color: #75dd4e;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container" style="width: 40%">
+    <h2>ДЗ #8 - Крестики - нолики</h2>
+    <div id="tictacboard" style="width: 60%; margin: 20px auto;"></div>
+    <div id="condition" style="width: 60%; margin: 20px auto;"></div>
+</div>
+
+
+<script>
+    "use strict";
+
+    var currentPlayer = true; // true - x, false - o
+    var boardArray = [];
+    var gameIsOver = false;
+    var conditionDiv = document.getElementById("condition");
+
+    function currentSymbol() {
+        if (currentPlayer == true) {
+            return "&#9587;";
+        } else {
+            return "&#9711";
+        }
+    }
+
+    function displayWhoIsNext() {
+        conditionDiv.innerHTML = "Следующим ходит " + currentSymbol();
+    }
+
+    function threeFieldsCheck(f1, f2, f3) {
+        if (f1.innerHTML != "" && f1.innerHTML == f2.innerHTML && f1.innerHTML == f3.innerHTML) {
+
+            f1.className = "cell highlight-win-combination";
+            f2.className = "cell highlight-win-combination";
+            f3.className = "cell highlight-win-combination";
+
+            var winnerSymbol = f1.innerHTML;
+            gameIsOver = true;
+            conditionDiv.innerHTML = 'Победил ' + winnerSymbol + ' <button class="btn btn-default" onclick="newGame()">Снова?</button>';
+        }
+    }
+
+    function checkGameCondition() {
+        threeFieldsCheck(boardArray[1], boardArray[2], boardArray[3]);
+        threeFieldsCheck(boardArray[4], boardArray[5], boardArray[6]);
+        threeFieldsCheck(boardArray[7], boardArray[8], boardArray[9]);
+
+        threeFieldsCheck(boardArray[1], boardArray[4], boardArray[7]);
+        threeFieldsCheck(boardArray[2], boardArray[5], boardArray[8]);
+        threeFieldsCheck(boardArray[3], boardArray[6], boardArray[9]);
+
+        threeFieldsCheck(boardArray[1], boardArray[5], boardArray[9]);
+        threeFieldsCheck(boardArray[3], boardArray[5], boardArray[7]);
+    }
+
+    function newGame() {
+        currentPlayer = true;
+        displayWhoIsNext();
+        gameIsOver = false;
+        for (var i = 1; i <= 9; i++) {
+            boardArray[i].innerHTML = "";
+            boardArray[i].className = "cell";
+        }
+    }
+
+    function cellClick(event, cellId) {
+        if (cellId.innerHTML == "" && gameIsOver == false) {
+            cellId.innerHTML = currentSymbol();
+
+            currentPlayer = !currentPlayer;
+            displayWhoIsNext();
+            checkGameCondition();
+        }
+    }
+
+    function generateTicTacBoard(containerForBoardId) {
+        var boardContainer = document.getElementById(containerForBoardId);
+        var table = document.createElement('table');
+        var counter = 1;
+        table.className = "tic-tac-board";
+
+        for (var i = 1; i <= 3; i++) {
+            var tr = document.createElement('tr');
+            for (var j = 1; j <= 3; j++) {
+                // игровое поле
+                var td = document.createElement('td');
+                td.className = "cell";
+
+                var id = "cell" + j + i;
+                td.setAttribute("id", id);
+                td.setAttribute("onclick", "cellClick(event, " + id + ")");
+
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        boardContainer.appendChild(table);
+
+        for (var i = 1; i <= 3; i++) {
+            for (var j = 1; j <= 3; j++) {
+                var cid = "cell" + j + i;
+                boardArray[counter] = document.getElementById(cid);
+                counter++;
+            }
+        }
+    }
+
+    generateTicTacBoard("tictacboard");
+    displayWhoIsNext();
+</script>
+</body>
+</html>
